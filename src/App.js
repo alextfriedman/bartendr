@@ -41,24 +41,23 @@ const App = () => {
         s: userSelection
       },
     }).then((res) => {
-      console.log(res.data.drinks[0]);
       setDrinkResult(res.data.drinks);
     })
   }, [form])
 
   return (
-    <div className="App">
+    <div className="wrapper">
       <h1>Mixed Feelings</h1>
       <p>Select your mood to reveal what cocktail you should make!</p>
       <form onSubmit={handleClick}>
         <select name="mood" id="mood" onChange={(e) => {setUserSelection(e.target.value)}} value={userSelection}>
           <option value="initial" disabled>How are you feeling?</option>
-          <option value="Strawberry_Margarita">Excited</option>
+          <option value="Margarita">Excited</option>
           <option value="Aperol_Spritz">Content</option>
-          <option value="">Frustrated</option>
+          <option value="Dark_and_Stormy">Angry</option>
           <option value="White_Russian">Depressed</option>
-          <option value="Vodka_Martini">Nervous</option>
-          <option value="Vesper">Peaceful</option>
+          <option value="Dry_Martini">Nervous</option>
+          <option value="Mojito">Peaceful</option>
           <option value="Old_Fashioned">Nostalgic</option>
           <option value="French_75">Romantic</option>
         </select>
