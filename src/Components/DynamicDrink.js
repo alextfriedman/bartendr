@@ -29,10 +29,14 @@ const DynamicDrink = (props) => {
     return (
         <>
         {props.drink ?
-        <div>
-            <h2>{props.drink[0].strDrink}</h2>
-            <ul>
-                {
+        <div className="drinkContainer">
+            <div className="drinkImg">
+                <img src={props.drink[0].strDrinkThumb} alt={`A picture of the ${props.drink[0].strDrink}`} />
+            </div>
+            <div className="drinkText">
+                <h2>{props.drink[0].strDrink}</h2>
+                <ul>
+                    {
                     ingredients.map((ing, index) => {
                         return (
                             <li key={index}>
@@ -40,10 +44,10 @@ const DynamicDrink = (props) => {
                             </li>
                         )
                     })
-                }
-            </ul>
-            <p>{props.drink[0].strInstructions}</p>
-            <img src={props.drink[0].strDrinkThumb} alt={`A picture of the ${props.drink[0].strDrink}`} />
+                    }
+                </ul>
+                <p>{props.drink[0].strInstructions}</p>
+            </div>
         </div>
         : null
         }

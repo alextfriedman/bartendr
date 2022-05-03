@@ -17,9 +17,6 @@ import axios from "axios";
 // Components
 import DynamicDrink from "./Components/DynamicDrink";
 
-// Styling
-import './App.css';
-
 
 const App = () => {
   const [drinkResult, setDrinkResult] = useState(null);
@@ -46,10 +43,11 @@ const App = () => {
   }, [form])
 
   return (
+    <>
     <div className="wrapper">
       <h1>Mixed Feelings</h1>
-      <p>Select your mood to reveal what cocktail you should make!</p>
       <form onSubmit={handleClick}>
+        <label htmlFor="mood">Select your mood to reveal what cocktail you should make</label>
         <select name="mood" id="mood" onChange={(e) => {setUserSelection(e.target.value)}} value={userSelection}>
           <option value="initial" disabled>How are you feeling?</option>
           <option value="Margarita">Excited</option>
@@ -59,13 +57,23 @@ const App = () => {
           <option value="Dry_Martini">Nervous</option>
           <option value="Mojito">Peaceful</option>
           <option value="Old_Fashioned">Nostalgic</option>
-          <option value="French_75">Romantic</option>
+          <option value="Champagne_Cocktail">Romantic</option>
+          <option value="Pink_Lady">Whimsical</option>
+          <option value="Espresso_Martini">Lethargic</option>
+          <option value="Bloody_Mary">Vengeful</option>
+          <option value="Grasshopper">Jealous</option>
+          <option value="Long_Island_Iced_Tea">Confused</option>
         </select>
         <button>Submit</button>
       </form>
 
       <DynamicDrink drink={drinkResult}/>
+
     </div>
+    <footer>
+      <p>Created by Alexandra Friedman at <a href="https://junocollege.com/">Juno College</a></p>
+    </footer>
+    </>
   );
 }
 
