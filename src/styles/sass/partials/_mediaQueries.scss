@@ -1,0 +1,23 @@
+@media (min-width: 650px) {
+    
+    form select,
+    form button {
+        width: 50%;
+    }
+    
+    .drinkContainer {
+        display: flex;
+        justify-content: space-between;
+        .drinkImg {
+            width: 49%;
+            margin: auto 0;
+            img {
+                margin: 0 auto;
+            }
+        }
+        .drinkText {
+            width: 49%;
+            text-align: left;
+        }
+    }
+}
