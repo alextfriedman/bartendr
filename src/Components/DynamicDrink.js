@@ -31,7 +31,7 @@ const DynamicDrink = (props) => {
         {props.drink ?
         <div className="drinkContainer">
             <div className="drinkImg">
-                <img src={props.drink[0].strDrinkThumb} alt={`A picture of the ${props.drink[0].strDrink}`} />
+                <img src={props.drink[0].strDrinkThumb} alt={`A ${props.drink[0].strDrink}`} />
             </div>
             <div className="drinkText">
                 <h2>{props.drink[0].strDrink}</h2>

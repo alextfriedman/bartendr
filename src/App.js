@@ -11,7 +11,7 @@
 // Styling
 
 // Modules
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 
 // Components
@@ -21,15 +21,10 @@ import DynamicDrink from "./Components/DynamicDrink";
 const App = () => {
   const [drinkResult, setDrinkResult] = useState(null);
   const [userSelection, setUserSelection] = useState("initial");
-  const [form, setForm] = useState(null);
   
   const handleClick = (e) => {
     e.preventDefault();
     // Update form state to userSelection value
-    setForm(userSelection);
-  }
-
-  useEffect(() => {
     axios({
       url: "https://www.thecocktaildb.com/api/json/v1/1/search.php",
       method: "GET",
@@ -40,13 +35,13 @@ const App = () => {
     }).then((res) => {
       setDrinkResult(res.data.drinks);
     })
-  }, [form])
+  }
 
   return (
     <>
     <div className="wrapper">
       <h1>Mixed Feelings</h1>
-      <form onSubmit={handleClick}>
+      <form onSubmit={(e) => {handleClick(e)}}>
         <label htmlFor="mood">Select your mood to reveal what cocktail you should make</label>
         <select name="mood" id="mood" onChange={(e) => {setUserSelection(e.target.value)}} value={userSelection}>
           <option value="initial" disabled>How are you feeling?</option>
