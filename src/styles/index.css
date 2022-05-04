@@ -314,7 +314,7 @@ form button:focus-visible {
 }
 
 .drinkContainer {
-  margin-bottom: 50px;
+  margin-bottom: 100px;
 }
 
 img {
@@ -325,14 +325,16 @@ img {
 }
 
 footer {
-  margin: 20px;
+  margin: 0;
   background-color: black;
-}
-footer p {
   position: fixed;
   bottom: 0;
+  width: 100%;
+}
+footer p {
+  font-size: 1rem;
   margin: 0;
-  text-align: center;
+  padding: 10px;
 }
 footer a {
   color: gold;
@@ -341,6 +343,11 @@ footer a {
 }
 
 @media (min-width: 650px) {
+  form select,
+form button {
+    width: 50%;
+  }
+
   .drinkContainer {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -359,10 +366,5 @@ footer a {
   .drinkContainer .drinkText {
     width: 49%;
     text-align: left;
-  }
-
-  form select,
-form button {
-    width: 50%;
   }
 }

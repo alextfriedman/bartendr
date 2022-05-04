@@ -81,7 +81,7 @@ form {
 }
 
 .drinkContainer {
-    margin-bottom: 50px;
+    margin-bottom: 100px;
 }
 
 img {
@@ -92,14 +92,15 @@ img {
 }
 
 footer {
-    margin: 20px;
+    margin: 0;
     background-color: black;
-    // padding: 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
     p {
-        position: fixed;
-        bottom: 0;
+        font-size: 1rem;
         margin: 0;
-        text-align: center;
+        padding: 10px;
     }
     a {
         color: gold;
