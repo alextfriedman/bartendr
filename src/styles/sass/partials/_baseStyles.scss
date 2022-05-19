@@ -81,7 +81,7 @@ form {
 }
 
 .drinkContainer {
-    margin-bottom: 200px;
+    margin-bottom: 100px;
 }
 
 img {
@@ -94,7 +94,7 @@ img {
 footer {
     margin: 0;
     background-color: black;
-    position: fixed;
+    position: sticky;
     bottom: 0;
     width: 100%;
     p {
